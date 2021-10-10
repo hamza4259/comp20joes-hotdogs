@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Joe's Hotdog Stand</title>
+    <style type="text/css">
+        header, h1{font-size:30px;}
+        body{font-size:20px;}
+    </style>
+</head>
+<body>
+    <Header>Joe's Hotdog Stand</Header>
+    <h1>Your Order</h1>
+
+    <script language="javascript"> 
+        hotdogs = prompt ("How many hot dogs?", 0);
+        totalHotDogs = 3.75 * hotdogs; 
+        document.write("Hotdogs: " 
+            + hotdogs + " at $3.75 is $" + totalHotDogs.toFixed(2) + "<br>");
+
+        fries = prompt ("How many fries?", 0);
+        totalFries = 2.00 * fries; 
+        totalFries = Math.round(totalFries * 100) / 100;
+        document.write("Fries: " + fries + " at $2.00 is $" + totalFries.toFixed(2) + "<br>");
+
+        sodas = prompt ("How many sodas?", 0);
+        totalSodas = 1.50*sodas;
+        document.write("Sodas: " + sodas + " at $1.50 is $" + totalSodas.toFixed(2) + "<br>");
+
+        sub = totalHotDogs + totalFries + totalSodas; 
+        if (sub >= 20){
+            document.write("You qualified for our 10% discount.<br>");
+            sub = sub - (sub * 0.1);
+        } 
+        else {
+            document.write("You did not qualify for our 10% discount.<br>");
+        }
+        document.write("Subtotal: $" + sub.toFixed(2) + "<br>");
+
+        tax = sub * 0.0625;
+        document.write("Tax: $" + tax.toFixed(2) + "<br>");
+
+        total = sub + tax;
+        document.write("Total: $" + total.toFixed(2) + "<br>");
+    </script>
+</body>
